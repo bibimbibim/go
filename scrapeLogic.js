@@ -17,9 +17,12 @@ const scrapeLogic = async (res) => {
     try {
         console.log("================1")
         const page = await browser.newPage();
+        console.log("a================1")
         await page.goto("https://weverse.io", { waitUntil: "networkidle2" });
+        console.log("b================1")
         const id = "letsgo2310@protonmail.com";
         const pw = "gogo2020!";
+        console.log("c================1")
         // 로그인
         await page.click(
             "#root > div.App > div > div.GlobalLayoutView_header__1UkFL > header > div > a"
