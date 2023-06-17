@@ -71,7 +71,7 @@ const scrapeLogic = async (res) => {
         console.error(e);
         res.send(`Something went wrong: ${e}`)
     } finally {
-        await browser.close();
+        // await browser.close();
     }
 };
 
