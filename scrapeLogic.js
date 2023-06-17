@@ -15,14 +15,17 @@ const scrapeLogic = async (res) => {
         headless: "new"
     });
     try {
+        console.log("================1")
         const page = await browser.newPage();
         await page.goto("https://weverse.io", { waitUntil: "networkidle2" });
+        setTimeout(async ()=>{}, 1000)
         const id = "letsgo2310@protonmail.com";
         const pw = "gogo2020!";
         // 로그인
         await page.click(
             "#root > div.App > div > div.GlobalLayoutView_header__1UkFL > header > div > a"
         );
+        setTimeout(async ()=>{}, 1000)
         await page.waitForSelector(
             "#__next > div > div.sc-fdeced8b-3.fuepEy > form > div > div.sc-ed52fcbe-8.bhRZmA > input"
         );
@@ -41,7 +44,7 @@ const scrapeLogic = async (res) => {
         await page.keyboard.down("Enter");
 
         const num = "2-119928500"
-        await page.waitForTimeout(1000)
+        setTimeout(async ()=>{}, 1000)
         await page.goto(`https://weverse.io/fromis9/live/${num}`);
 
         // ErrorPageView_title__9kyB8
