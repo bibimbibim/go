@@ -18,14 +18,14 @@ const scrapeLogic = async (res) => {
         console.log("================1")
         const page = await browser.newPage();
         await page.goto("https://weverse.io", { waitUntil: "networkidle2" });
-        setTimeout(async ()=>{}, 1000)
         const id = "letsgo2310@protonmail.com";
         const pw = "gogo2020!";
         // 로그인
         await page.click(
             "#root > div.App > div > div.GlobalLayoutView_header__1UkFL > header > div > a"
         );
-        setTimeout(async ()=>{}, 1000)
+        console.log("================2")
+        // setTimeout(async ()=>{}, 1000)
         await page.waitForSelector(
             "#__next > div > div.sc-fdeced8b-3.fuepEy > form > div > div.sc-ed52fcbe-8.bhRZmA > input"
         );
@@ -33,7 +33,9 @@ const scrapeLogic = async (res) => {
             "#__next > div > div.sc-fdeced8b-3.fuepEy > form > div > div.sc-ed52fcbe-8.bhRZmA > input",
             id
         );
+        console.log("================3")
         await page.keyboard.down("Enter");
+        console.log("================4")
         await page.waitForSelector(
             "#__next > div > div.sc-fdeced8b-3.fuepEy > div > form > div.sc-d0f94a43-0.bCrkf > div > div.sc-ed52fcbe-8.eoxMAH > input"
         );
@@ -42,13 +44,14 @@ const scrapeLogic = async (res) => {
             pw
         );
         await page.keyboard.down("Enter");
+        console.log("================5")
 
         const num = "2-119928500"
         setTimeout(async ()=>{}, 1000)
         await page.goto(`https://weverse.io/fromis9/live/${num}`);
 
         // ErrorPageView_title__9kyB8
-        
+        console.log("================6")
         page.on("response", async (res) => {
             const url = res.url();
             if (url.includes("https://global.apis.naver.com/rmcnmv/rmcnmv/")) {
