@@ -45,8 +45,6 @@ const scrapeLogic = async (res) => {
         await page.goto(`https://weverse.io/fromis9/live/${num}`);
 
         // ErrorPageView_title__9kyB8
-
-        setTimeout(async () => { }, 30000)
         
         page.on("response", async (res) => {
             const url = res.url();
